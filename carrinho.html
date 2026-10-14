@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Revise seu carrinho e finalize seu pedido pelo WhatsApp.">
+  <title>Seu carrinho | Vitrine Store</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="store.js" defer></script>
+  <script src="cart.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Vitrine Store - início">
+        <span class="brand-mark">V</span><span>vitrine<span class="brand-dot">.</span>store</span>
+      </a>
+      <div class="nav-right">
+        <a class="nav-link" href="index.html#produtos">Continuar comprando</a>
+        <a class="cart-jump" href="carrinho.html" aria-current="page">🛍️ Carrinho <span class="cart-count" data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container cart-page">
+    <h1 class="page-heading">Seu carrinho</h1>
+    <p class="page-subtitle">Confira os produtos, ajuste as quantidades e informe os dados para enviar seu pedido pelo WhatsApp.</p>
+
+    <aside class="cart-panel" id="carrinho">
+      <div class="cart-title">
+        <h2>Itens selecionados</h2>
+        <span class="count-pill" id="cart-count">0</span>
+      </div>
+      <div class="cart-items" id="cart-items">
+        <div class="cart-empty">Seu carrinho está vazio.<br>Adicione um produto para começar.</div>
+      </div>
+      <div class="cart-details">
+        <form id="checkout-form">
+          <label class="form-label" for="customer-name">Seu nome *</label>
+          <input class="field" id="customer-name" name="customer-name" type="text" placeholder="Como podemos te chamar?" required maxlength="100">
+
+          <label class="form-label" for="delivery">Como deseja receber? *</label>
+          <select class="field" id="delivery" name="delivery" required>
+            <option value="Entrega">Entrega</option>
+            <option value="Retirada no local">Retirada no local</option>
+          </select>
+
+          <div id="address-group">
+            <label class="form-label" for="address">Endereço de entrega *</label>
+            <textarea class="field" id="address" name="address" placeholder="Rua, número, bairro e complemento" maxlength="300"></textarea>
+            <span class="field-hint">O valor do frete pode ser combinado pelo WhatsApp.</span>
+          </div>
+
+          <label class="form-label" for="payment">Forma de pagamento *</label>
+          <select class="field" id="payment" name="payment" required>
+            <option value="Pix">Pix</option>
+            <option value="Cartão">Cartão</option>
+            <option value="Dinheiro">Dinheiro</option>
+          </select>
+
+          <label class="form-label" for="notes">Observações (opcional)</label>
+          <textarea class="field" id="notes" name="notes" placeholder="Alguma informação sobre o pedido?" maxlength="400"></textarea>
+
+          <div class="totals">
+            <div class="total-line"><span>Subtotal</span><span id="subtotal">R$ 0,00</span></div>
+            <div class="total-line"><span>Frete</span><span>A combinar</span></div>
+            <div class="total-line grand"><span>Total dos produtos</span><span id="total">R$ 0,00</span></div>
+          </div>
+
+          <button class="whatsapp-button" type="submit" id="checkout-button" disabled><span aria-hidden="true">☏</span> Finalizar pelo WhatsApp</button>
+          <p class="secure-note">Seu pedido será enviado ao WhatsApp da loja para confirmar disponibilidade, entrega e pagamento.</p>
+        </form>
+      </div>
+    </aside>
+    <div class="back-to-shop"><a class="secondary-link" href="index.html#produtos">← Continuar comprando</a></div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Vitrine Store. Todos os direitos reservados.</span>
+      <span>Uma experiência simples, do seu jeito.</span>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Loja online com produtos selecionados e pedidos pelo WhatsApp.">
+  <title>Vitrine Store | Loja Online</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="store.js" defer></script>
+  <script src="catalog.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Vitrine Store - início">
+        <span class="brand-mark">V</span><span>vitrine<span class="brand-dot">.</span>store</span>
+      </a>
+      <div class="nav-right">
+        <a class="nav-link" href="#produtos">Produtos</a>
+        <a class="cart-jump" href="carrinho.html">🛍️ Carrinho <span class="cart-count" data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio" class="container">
+    <section class="hero">
+      <div class="hero-panel">
+        <div class="hero-copy">
+          <span class="eyebrow">Curadoria especial · Vitrine Store</span>
+          <h1>Peças que combinam com você.</h1>
+          <p>Descubra seus próximos favoritos em uma loja prática, elegante e feita para facilitar cada escolha. Encontre, adicione ao carrinho e combine os detalhes do pedido pelo WhatsApp.</p>
+          <a class="primary-link" href="#produtos">Explorar produtos <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">🛍️</div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Vantagens da Vitrine Store">
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">✓</span><span><strong>Compra descomplicada</strong><small>Escolha seus itens com facilidade</small></span></div>
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">♡</span><span><strong>Seleção especial</strong><small>Produtos escolhidos para você</small></span></div>
+      <div class="trust-item"><span class="trust-icon" aria-hidden="true">↗</span><span><strong>Atendimento próximo</strong><small>Finalize os detalhes no WhatsApp</small></span></div>
+    </section>
+
+    <section id="produtos">
+      <div class="section-head">
+        <div>
+          <span class="section-kicker">ENCONTRE O SEU PRÓXIMO FAVORITO</span>
+          <h2>Descubra a vitrine</h2>
+          <p>Explore nossa seleção ou pesquise pelo que procura.</p>
+        </div>
+        <input class="search" id="search" type="search" placeholder="Buscar produtos..." aria-label="Buscar produto">
+      </div>
+      <div class="shop-layout">
+        <div class="products" id="product-list" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Vitrine Store. Todos os direitos reservados.</span>
+      <span>Uma experiência simples, do seu jeito.</span>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

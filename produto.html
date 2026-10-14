@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Veja os detalhes do produto na Vitrine Store.">
+  <title>Produto | Vitrine Store</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="store.js" defer></script>
+  <script src="product.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Vitrine Store - início">
+        <span class="brand-mark">V</span><span>vitrine<span class="brand-dot">.</span>store</span>
+      </a>
+      <div class="nav-right">
+        <a class="nav-link" href="index.html#produtos">Produtos</a>
+        <a class="cart-jump" href="carrinho.html">🛍️ Carrinho <span class="cart-count" data-cart-count>0</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumbs" aria-label="Navegação estrutural"><a href="index.html">Início</a> / <a href="index.html#produtos">Produtos</a> / <span id="breadcrumb-product">Produto</span></nav>
+    <section id="product-detail" class="product-detail" aria-live="polite">
+      <div class="product-detail-media"><img id="detail-image" src="" alt=""></div>
+      <div class="product-detail-info">
+        <span class="eyebrow" id="detail-tag">Produto</span>
+        <h1 id="detail-name">Carregando produto...</h1>
+        <p class="detail-description" id="detail-description"></p>
+        <div class="detail-price" id="detail-price"></div>
+        <p class="detail-note">Frete, disponibilidade e opções de pagamento são confirmados pelo WhatsApp antes da conclusão do pedido.</p>
+        <div class="detail-actions">
+          <button class="add-button" id="add-to-cart" type="button">＋ Adicionar ao carrinho</button>
+          <a class="secondary-link" href="carrinho.html">Ver carrinho</a>
+        </div>
+        <p class="field-hint">Seu carrinho fica salvo enquanto você navega pela loja.</p>
+      </div>
+    </section>
+    <div id="not-found" class="empty-search" hidden>Produto não encontrado. <a href="index.html">Voltar para a loja</a>.</div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year"></span> Vitrine Store. Todos os direitos reservados.</span>
+      <a href="index.html">Continuar comprando</a>
+    </div>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
